@@ -98,5 +98,8 @@ class RestaurantDetailViewController: UIViewController, UITableViewDataSource,
         navigationController?.setNavigationBarHidden(false, animated: true)
     }
     
+    //視圖取消回復
+    @IBAction func close(segue: UIStoryboardSegue){
+    }
     
 }
