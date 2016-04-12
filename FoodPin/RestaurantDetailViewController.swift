@@ -89,6 +89,7 @@ class RestaurantDetailViewController: UIViewController, UITableViewDataSource,
     }
     */
     @IBOutlet var tableView:UITableView!
+    @IBOutlet var ratingButton:UIButton!
     
     //hide navigationbar in restaurantDetailView but appear on restaurantView
     override func viewWillAppear(animated: Bool) {
@@ -98,8 +99,16 @@ class RestaurantDetailViewController: UIViewController, UITableViewDataSource,
         navigationController?.setNavigationBarHidden(false, animated: true)
     }
     
-    //視圖取消回復
-    @IBAction func close(segue: UIStoryboardSegue){
+    //視圖取消回復，並回傳圖案回DetailView
+    @IBAction func close(segue:UIStoryboardSegue) {
+        if let reviewViewController = segue.sourceViewController as? ReviewViewController {
+            if let rating = reviewViewController.rating {
+                restaurant.rating = rating
+                ratingButton.setImage(UIImage(named: rating), forState: UIControlState.Normal)
+            }
+        }
     }
+    
+    
     
 }

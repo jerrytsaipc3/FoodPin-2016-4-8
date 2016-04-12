@@ -194,6 +194,7 @@
                         </variation>
                     </view>
                     <connections>
+                        <outlet property="ratingButton" destination="jdQ-73-cFS" id="mIb-yA-Jrm"/>
                         <outlet property="restaurantImageView" destination="gsV-OE-D6q" id="7V0-AY-h2h"/>
                         <outlet property="tableView" destination="DN5-b6-2C0" id="mEP-V3-UXs"/>
                     </connections>
@@ -228,7 +229,7 @@
                             <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="lJY-EA-CP8">
                                 <rect key="frame" x="185" y="165" width="230" height="70"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xbi-Zm-dh8">
+                                    <button opaque="NO" tag="100" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xbi-Zm-dh8">
                                         <rect key="frame" x="0.0" y="0.0" width="70" height="70"/>
                                         <color key="backgroundColor" red="1" green="0.065826246190000007" blue="0.1062304391" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
@@ -242,8 +243,11 @@
                                                 <integer key="value" value="35"/>
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="ratingSelected:" destination="cte-X2-Cna" eventType="touchUpInside" id="AaR-s7-C0M"/>
+                                        </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3qA-TI-uXJ">
+                                    <button opaque="NO" tag="200" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3qA-TI-uXJ">
                                         <rect key="frame" x="80" y="0.0" width="70" height="70"/>
                                         <color key="backgroundColor" red="1" green="0.065826246190000007" blue="0.1062304391" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
@@ -257,8 +261,11 @@
                                                 <integer key="value" value="35"/>
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="ratingSelected:" destination="cte-X2-Cna" eventType="touchUpInside" id="Ue4-ct-WqH"/>
+                                        </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="w7O-6y-5cJ">
+                                    <button opaque="NO" tag="300" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="w7O-6y-5cJ">
                                         <rect key="frame" x="160" y="0.0" width="70" height="70"/>
                                         <color key="backgroundColor" red="1" green="0.065826246190000007" blue="0.1062304391" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
@@ -272,6 +279,9 @@
                                                 <integer key="value" value="35"/>
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="ratingSelected:" destination="cte-X2-Cna" eventType="touchUpInside" id="gGe-yz-wkg"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                             </stackView>
@@ -284,7 +294,7 @@
                                 <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <state key="normal" image="close"/>
                                 <connections>
-                                    <segue destination="gQw-bc-Taj" kind="unwind" unwindAction="close:" id="k43-lA-j59"/>
+                                    <segue destination="gQw-bc-Taj" kind="unwind" identifier="unwindToDetailView" unwindAction="close:" id="k43-lA-j59"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -304,6 +314,9 @@
                     </view>
                     <connections>
                         <outlet property="backgroundImageView" destination="Drz-9X-Ywt" id="mtH-Cy-dpm"/>
+                        <outlet property="dislikeButton" destination="xbi-Zm-dh8" id="9KI-gy-Ddy"/>
+                        <outlet property="goodButton" destination="3qA-TI-uXJ" id="86S-Et-f4V"/>
+                        <outlet property="greatButton" destination="w7O-6y-5cJ" id="HX9-uT-Tss"/>
                         <outlet property="ratingStackView" destination="lJY-EA-CP8" id="f4K-nT-PLl"/>
                     </connections>
                 </viewController>

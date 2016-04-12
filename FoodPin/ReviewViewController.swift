@@ -12,6 +12,15 @@ class ReviewViewController: UIViewController {
     
     //背景加上模糊特效
     @IBOutlet var backgroundImageView:UIImageView!
+    //加入動畫
+    @IBOutlet var ratingStackView:UIStackView!
+    @IBOutlet var dislikeButton:UIButton!
+    @IBOutlet var goodButton:UIButton!
+    @IBOutlet var greatButton:UIButton!
+    
+    
+    var rating:String?
+
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,25 +31,64 @@ class ReviewViewController: UIViewController {
         blurEffectView.frame = view.bounds
         backgroundImageView.addSubview(blurEffectView)
    
-        //animation
-        ratingStackView.transform = CGAffineTransformMakeScale(0.0, 0.0)
+        
+        // Scale down & move the rating stack view off the screen
+        // let scale = CGAffineTransformMakeScale(0.0, 0.0)
+        // let translate = CGAffineTransformMakeTranslation(0, 500)
+        // ratingStackView.transform = CGAffineTransformConcat(scale, translate)
+        
         
         //向上滑動之動畫
-        let scale = CGAffineTransformMakeScale(0.0, 0.0)
         let translate = CGAffineTransformMakeTranslation(0, 500)
-        ratingStackView.transform = CGAffineTransformConcat(scale, translate)
+        dislikeButton.transform = translate
+        goodButton.transform = translate
+        greatButton.transform = translate
 
     }
     
-    //加入動畫
-    @IBOutlet var ratingStackView:UIStackView!
+    
+
     
     override func viewDidAppear(animated: Bool) {
-        UIView.animateWithDuration(0.4, delay: 0.0, usingSpringWithDamping: 1, initialSpringVelocity: 0.5, options: [], animations: {
-        self.ratingStackView.transform = CGAffineTransformIdentity
-        }, completion: nil)
+        // Spring animation
+        UIView.animateWithDuration(0.5, delay: 0.0, usingSpringWithDamping: 0.7, initialSpringVelocity: 0.5, options: [], animations: {
+            
+            self.dislikeButton.transform = CGAffineTransformIdentity
+            
+            }, completion: nil)
+        
+        UIView.animateWithDuration(0.5, delay: 0.2, usingSpringWithDamping: 0.7, initialSpringVelocity: 0.5, options: [], animations: {
+            
+            self.goodButton.transform = CGAffineTransformIdentity
+            
+            }, completion: nil)
+        
+        UIView.animateWithDuration(0.5, delay: 0.4, usingSpringWithDamping: 0.7, initialSpringVelocity: 0.5, options: [], animations: {
+            
+            self.greatButton.transform = CGAffineTransformIdentity
+            
+            }, completion: nil)
+        // Normal animation
+        //        UIView.animateWithDuration(0.7, delay: 0.0, options: [], animations: {
+        //            self.ratingStackView.transform = CGAffineTransformIdentity
+        //        }, completion: nil)
+
     }
     
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
+    }
 
-}
+        //將評價圖回傳至DetailView
+    @IBAction func ratingSelected(sender: UIButton){
+        switch(sender.tag){
+        case 100: rating = "dislike"
+        case 200: rating = "good"
+        case 300: rating = "great"
+        default: break
+        }
+        performSegueWithIdentifier("unwindToDetailView", sender: sender)
+    }
+   }
 
