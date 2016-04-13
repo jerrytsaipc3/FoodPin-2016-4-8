@@ -90,5 +90,5 @@ class ReviewViewController: UIViewController {
         }
         performSegueWithIdentifier("unwindToDetailView", sender: sender)
     }
-   }
+}
 

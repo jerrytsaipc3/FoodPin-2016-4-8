@@ -108,7 +108,13 @@ class RestaurantDetailViewController: UIViewController, UITableViewDataSource,
             }
         }
     }
-    
-    
+    //將選取地圖傳到視圖控制器
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject!) {
+        if segue.identifier == "showMap" {
+        let destinationController = segue.destinationViewController as!
+            MapViewController
+              destinationController.restaurant = restaurant
+        }
+    }
     
 }

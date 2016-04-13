@@ -176,13 +176,33 @@
                                     <segue destination="cte-X2-Cna" kind="presentation" identifier="showReview" id="dvZ-iX-PlQ"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qRC-Y3-js6">
+                                <rect key="frame" x="553" y="120" width="40" height="40"/>
+                                <color key="backgroundColor" red="1" green="0.065826246190000007" blue="0.1062304391" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="E4P-pE-Nd7"/>
+                                    <constraint firstAttribute="width" constant="40" id="nbo-hA-zfR"/>
+                                </constraints>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <state key="normal" image="map"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="20"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <segue destination="tfP-gb-qdM" kind="show" identifier="showMap" id="pcr-K2-see"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="qRC-Y3-js6" firstAttribute="top" secondItem="jdQ-73-cFS" secondAttribute="bottom" constant="8" id="7r1-aa-zcW"/>
                             <constraint firstItem="DN5-b6-2C0" firstAttribute="top" secondItem="KLU-4H-U3L" secondAttribute="topMargin" id="GWT-hs-HHU"/>
                             <constraint firstAttribute="trailingMargin" secondItem="jdQ-73-cFS" secondAttribute="trailing" constant="-7" id="HGD-6n-b3B"/>
                             <constraint firstItem="b0W-2l-ceo" firstAttribute="top" secondItem="jdQ-73-cFS" secondAttribute="bottom" constant="488" id="Han-ga-6nX"/>
                             <constraint firstItem="b0W-2l-ceo" firstAttribute="top" secondItem="DN5-b6-2C0" secondAttribute="bottom" id="N8u-Cp-WXW"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="qRC-Y3-js6" secondAttribute="trailing" constant="-7" id="O5e-pZ-KhR"/>
                             <constraint firstItem="DN5-b6-2C0" firstAttribute="leading" secondItem="KLU-4H-U3L" secondAttribute="leadingMargin" constant="-20" id="Qnf-pi-Rl6"/>
                             <constraint firstItem="jdQ-73-cFS" firstAttribute="top" secondItem="SNY-6j-gUm" secondAttribute="bottom" constant="8" id="VZ6-nz-pMf"/>
                             <constraint firstAttribute="trailingMargin" secondItem="DN5-b6-2C0" secondAttribute="trailing" constant="-20" id="p4I-fu-G0x"/>
@@ -325,6 +345,38 @@
             </objects>
             <point key="canvasLocation" x="2455" y="341"/>
         </scene>
+        <!--Map View Controller-->
+        <scene sceneID="rWU-kO-iyp">
+            <objects>
+                <viewController id="tfP-gb-qdM" customClass="MapViewController" customModule="FoodPin" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="frI-Ie-1dh"/>
+                        <viewControllerLayoutGuide type="bottom" id="tlO-vZ-krV"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="mDZ-H3-UCS">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" showsUserLocation="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Hj3-hk-8pr">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                            </mapView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="Hj3-hk-8pr" secondAttribute="trailing" id="AP0-d7-Ula"/>
+                            <constraint firstItem="Hj3-hk-8pr" firstAttribute="leading" secondItem="mDZ-H3-UCS" secondAttribute="leading" id="hju-IO-Fnj"/>
+                            <constraint firstItem="Hj3-hk-8pr" firstAttribute="top" secondItem="mDZ-H3-UCS" secondAttribute="top" id="isf-el-yfa"/>
+                            <constraint firstItem="Hj3-hk-8pr" firstAttribute="bottom" secondItem="tlO-vZ-krV" secondAttribute="top" id="qZB-Zi-TAe"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="mapView" destination="Hj3-hk-8pr" id="Wad-CM-iNa"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="57c-Zj-vYd" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1772" y="-320"/>
+        </scene>
         <!--Navigation Controller-->
         <scene sceneID="i2W-0O-x50">
             <objects>
@@ -350,6 +402,7 @@
         <image name="dislike" width="84" height="84"/>
         <image name="good" width="256" height="256"/>
         <image name="great" width="256" height="256"/>
+        <image name="map" width="48" height="48"/>
         <image name="rating" width="256" height="256"/>
     </resources>
 </document>
