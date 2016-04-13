@@ -46,6 +46,13 @@ class MapViewController: UIViewController, MKMapViewDelegate {
         
         //定義mapView代理
         mapView.delegate = self
+        //顯示交通流量大的點
+        mapView.showsTraffic = true
+        //於地圖左上角顯示比例
+        mapView.showsScale = true
+        //於地圖右上角顯示指南針
+        mapView.showsCompass = true
+        
     }
     
     override func didReceiveMemoryWarning() {
@@ -55,6 +62,9 @@ class MapViewController: UIViewController, MKMapViewDelegate {
     }
     //將地圖視圖加入圖像
 func mapView(mapView: MKMapView, viewForAnnotation annotation: MKAnnotation) -> MKAnnotationView? {
+   
+    
+    
       let identifier = "Mypin"
       if annotation.isKindOfClass(MKUserLocation) {
         return nil
@@ -72,7 +82,11 @@ func mapView(mapView: MKMapView, viewForAnnotation annotation: MKAnnotation) -> 
             let leftIconView = UIImageView(frame: CGRectMake(0, 0, 53, 53))
             leftIconView.image = UIImage(named: restaurant.image)
             annotationView?.leftCalloutAccessoryView = leftIconView
-            return annotationView
+    
+          //自訂大頭針顏色
+          annotationView?.pinTintColor = UIColor.orangeColor()
+    
+          return annotationView
       }
  
 
