@@ -141,5 +141,9 @@ class RestaurantTableViewController: UITableViewController {
         navigationController?.hidesBarsOnSwipe = true
     }
     
-  
+  //定義靜態視圖unwind動作
+    @IBAction func unwindToHomeScreen(segue:UIStoryboardSegue){
+    
+    }
+    
 }
