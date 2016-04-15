@@ -401,53 +401,16 @@
                                             <rect key="frame" x="0.0" y="0.0" width="600" height="250"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="photoalbum" translatesAutoresizingMaskIntoConstraints="NO" id="g5T-Xk-qVx">
-                                                    <rect key="frame" x="203" y="32" width="195" height="186"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="width" constant="240" id="OGD-3d-PlN"/>
-                                                        <constraint firstAttribute="width" constant="195" id="PQc-DP-54B"/>
-                                                        <constraint firstAttribute="width" constant="195" id="eQP-Cd-lzG"/>
-                                                    </constraints>
-                                                    <variation key="default">
-                                                        <mask key="constraints">
-                                                            <exclude reference="OGD-3d-PlN"/>
-                                                            <exclude reference="PQc-DP-54B"/>
-                                                            <exclude reference="eQP-Cd-lzG"/>
-                                                        </mask>
-                                                    </variation>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="photoalbum" translatesAutoresizingMaskIntoConstraints="NO" id="ydh-Mt-uI6">
+                                                    <rect key="frame" x="258" y="83" width="84" height="84"/>
                                                 </imageView>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="g5T-Xk-qVx" firstAttribute="centerY" secondItem="BWG-1w-o3B" secondAttribute="centerY" id="1MX-9m-361"/>
-                                                <constraint firstItem="g5T-Xk-qVx" firstAttribute="top" secondItem="BWG-1w-o3B" secondAttribute="top" id="Fe9-GJ-vQJ"/>
-                                                <constraint firstItem="g5T-Xk-qVx" firstAttribute="centerY" secondItem="BWG-1w-o3B" secondAttribute="centerY" id="HFW-qi-Q0m"/>
-                                                <constraint firstItem="g5T-Xk-qVx" firstAttribute="centerX" secondItem="BWG-1w-o3B" secondAttribute="centerX" id="P59-Ky-8dJ"/>
-                                                <constraint firstItem="g5T-Xk-qVx" firstAttribute="top" secondItem="BWG-1w-o3B" secondAttribute="topMargin" constant="53" id="PHL-qJ-pM8"/>
-                                                <constraint firstItem="g5T-Xk-qVx" firstAttribute="top" secondItem="BWG-1w-o3B" secondAttribute="topMargin" constant="24" id="UvP-3M-PdH"/>
-                                                <constraint firstItem="g5T-Xk-qVx" firstAttribute="leading" secondItem="BWG-1w-o3B" secondAttribute="leading" id="aHK-VG-84i"/>
-                                                <constraint firstItem="g5T-Xk-qVx" firstAttribute="centerY" secondItem="BWG-1w-o3B" secondAttribute="centerY" id="dGP-FC-gTg"/>
-                                                <constraint firstItem="g5T-Xk-qVx" firstAttribute="top" secondItem="BWG-1w-o3B" secondAttribute="topMargin" constant="24" id="fbK-pH-7bm"/>
-                                                <constraint firstItem="g5T-Xk-qVx" firstAttribute="centerY" secondItem="BWG-1w-o3B" secondAttribute="centerY" id="nrr-vG-vHp"/>
-                                                <constraint firstAttribute="trailing" secondItem="g5T-Xk-qVx" secondAttribute="trailing" id="tFx-ln-2zc"/>
-                                                <constraint firstItem="g5T-Xk-qVx" firstAttribute="centerX" secondItem="BWG-1w-o3B" secondAttribute="centerX" id="vzK-Ed-60e"/>
-                                                <constraint firstItem="g5T-Xk-qVx" firstAttribute="centerX" secondItem="BWG-1w-o3B" secondAttribute="centerX" id="yxH-f5-nKk"/>
+                                                <constraint firstItem="ydh-Mt-uI6" firstAttribute="centerX" secondItem="BWG-1w-o3B" secondAttribute="centerX" id="Axw-as-Bht"/>
+                                                <constraint firstItem="ydh-Mt-uI6" firstAttribute="centerY" secondItem="BWG-1w-o3B" secondAttribute="centerY" id="lUD-s1-QQX"/>
                                             </constraints>
-                                            <variation key="default">
-                                                <mask key="constraints">
-                                                    <exclude reference="Fe9-GJ-vQJ"/>
-                                                    <exclude reference="HFW-qi-Q0m"/>
-                                                    <exclude reference="P59-Ky-8dJ"/>
-                                                    <exclude reference="PHL-qJ-pM8"/>
-                                                    <exclude reference="UvP-3M-PdH"/>
-                                                    <exclude reference="aHK-VG-84i"/>
-                                                    <exclude reference="dGP-FC-gTg"/>
-                                                    <exclude reference="nrr-vG-vHp"/>
-                                                    <exclude reference="tFx-ln-2zc"/>
-                                                    <exclude reference="vzK-Ed-60e"/>
-                                                </mask>
-                                            </variation>
                                         </tableViewCellContentView>
-                                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                        <color key="backgroundColor" red="0.96862745100000003" green="0.96862745100000003" blue="0.96862745100000003" alpha="1" colorSpace="calibratedRGB"/>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="72" id="uO9-C3-9oH">
                                         <rect key="frame" x="0.0" y="314" width="600" height="72"/>
@@ -630,7 +593,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="imageView" destination="g5T-Xk-qVx" id="N6O-9D-mr8"/>
+                        <outlet property="imageView" destination="ydh-Mt-uI6" id="dvt-Va-cTK"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9Re-Lj-7vd" userLabel="First Responder" sceneMemberID="firstResponder"/>
