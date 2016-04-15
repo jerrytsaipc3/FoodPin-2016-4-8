@@ -401,31 +401,48 @@
                                             <rect key="frame" x="0.0" y="0.0" width="600" height="250"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="photoalbum" translatesAutoresizingMaskIntoConstraints="NO" id="g5T-Xk-qVx">
-                                                    <rect key="frame" x="0.0" y="0.0" width="600" height="255"/>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="photoalbum" translatesAutoresizingMaskIntoConstraints="NO" id="g5T-Xk-qVx">
+                                                    <rect key="frame" x="203" y="32" width="195" height="186"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="240" id="OGD-3d-PlN"/>
+                                                        <constraint firstAttribute="width" constant="195" id="PQc-DP-54B"/>
+                                                        <constraint firstAttribute="width" constant="195" id="eQP-Cd-lzG"/>
                                                     </constraints>
                                                     <variation key="default">
                                                         <mask key="constraints">
                                                             <exclude reference="OGD-3d-PlN"/>
+                                                            <exclude reference="PQc-DP-54B"/>
+                                                            <exclude reference="eQP-Cd-lzG"/>
                                                         </mask>
                                                     </variation>
                                                 </imageView>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="g5T-Xk-qVx" firstAttribute="top" secondItem="BWG-1w-o3B" secondAttribute="top" id="3xV-mL-iln"/>
-                                                <constraint firstItem="g5T-Xk-qVx" firstAttribute="leading" secondItem="BWG-1w-o3B" secondAttribute="leading" id="NcY-ih-o6i"/>
+                                                <constraint firstItem="g5T-Xk-qVx" firstAttribute="centerY" secondItem="BWG-1w-o3B" secondAttribute="centerY" id="1MX-9m-361"/>
+                                                <constraint firstItem="g5T-Xk-qVx" firstAttribute="top" secondItem="BWG-1w-o3B" secondAttribute="top" id="Fe9-GJ-vQJ"/>
+                                                <constraint firstItem="g5T-Xk-qVx" firstAttribute="centerY" secondItem="BWG-1w-o3B" secondAttribute="centerY" id="HFW-qi-Q0m"/>
+                                                <constraint firstItem="g5T-Xk-qVx" firstAttribute="centerX" secondItem="BWG-1w-o3B" secondAttribute="centerX" id="P59-Ky-8dJ"/>
                                                 <constraint firstItem="g5T-Xk-qVx" firstAttribute="top" secondItem="BWG-1w-o3B" secondAttribute="topMargin" constant="53" id="PHL-qJ-pM8"/>
-                                                <constraint firstAttribute="trailing" secondItem="g5T-Xk-qVx" secondAttribute="trailing" id="arB-zY-ggc"/>
-                                                <constraint firstAttribute="bottomMargin" secondItem="g5T-Xk-qVx" secondAttribute="bottom" constant="-13.5" id="fE3-a6-Vth"/>
+                                                <constraint firstItem="g5T-Xk-qVx" firstAttribute="top" secondItem="BWG-1w-o3B" secondAttribute="topMargin" constant="24" id="UvP-3M-PdH"/>
+                                                <constraint firstItem="g5T-Xk-qVx" firstAttribute="leading" secondItem="BWG-1w-o3B" secondAttribute="leading" id="aHK-VG-84i"/>
+                                                <constraint firstItem="g5T-Xk-qVx" firstAttribute="centerY" secondItem="BWG-1w-o3B" secondAttribute="centerY" id="dGP-FC-gTg"/>
+                                                <constraint firstItem="g5T-Xk-qVx" firstAttribute="top" secondItem="BWG-1w-o3B" secondAttribute="topMargin" constant="24" id="fbK-pH-7bm"/>
                                                 <constraint firstItem="g5T-Xk-qVx" firstAttribute="centerY" secondItem="BWG-1w-o3B" secondAttribute="centerY" id="nrr-vG-vHp"/>
+                                                <constraint firstAttribute="trailing" secondItem="g5T-Xk-qVx" secondAttribute="trailing" id="tFx-ln-2zc"/>
                                                 <constraint firstItem="g5T-Xk-qVx" firstAttribute="centerX" secondItem="BWG-1w-o3B" secondAttribute="centerX" id="vzK-Ed-60e"/>
+                                                <constraint firstItem="g5T-Xk-qVx" firstAttribute="centerX" secondItem="BWG-1w-o3B" secondAttribute="centerX" id="yxH-f5-nKk"/>
                                             </constraints>
                                             <variation key="default">
                                                 <mask key="constraints">
+                                                    <exclude reference="Fe9-GJ-vQJ"/>
+                                                    <exclude reference="HFW-qi-Q0m"/>
+                                                    <exclude reference="P59-Ky-8dJ"/>
                                                     <exclude reference="PHL-qJ-pM8"/>
+                                                    <exclude reference="UvP-3M-PdH"/>
+                                                    <exclude reference="aHK-VG-84i"/>
+                                                    <exclude reference="dGP-FC-gTg"/>
                                                     <exclude reference="nrr-vG-vHp"/>
+                                                    <exclude reference="tFx-ln-2zc"/>
                                                     <exclude reference="vzK-Ed-60e"/>
                                                 </mask>
                                             </variation>

@@ -33,6 +33,21 @@ class AddRestaurantController: UITableViewController, UIImagePickerControllerDel
         imageView.contentMode = UIViewContentMode.ScaleToFill
         imageView.clipsToBounds = true
         
+        //將回傳圖片利用程式碼控制並做好比例調整
+        let leadingConstraint = NSLayoutConstraint(item: imageView, attribute:
+            NSLayoutAttribute.Leading, relatedBy: NSLayoutRelation.Equal, toItem: imageView.superview, attribute: NSLayoutAttribute.Leading, multiplier: 1, constant: 0)
+            leadingConstraint.active = true
+        
+        let trailingConstraint = NSLayoutConstraint(item: imageView, attribute: NSLayoutAttribute.Trailing, relatedBy: NSLayoutRelation.Equal, toItem: imageView.superview, attribute: NSLayoutAttribute.Trailing, multiplier: 1, constant: 0)
+            trailingConstraint.active = true
+        
+        let topConstraint = NSLayoutConstraint(item: imageView, attribute: NSLayoutAttribute.Top, relatedBy: NSLayoutRelation.Equal, toItem: imageView.superview, attribute: NSLayoutAttribute.Top, multiplier: 1, constant: 0)
+        topConstraint.active = true
+        
+        let bottomConstraint = NSLayoutConstraint(item: imageView, attribute: NSLayoutAttribute.Bottom, relatedBy: NSLayoutRelation.Equal, toItem: imageView.superview, attribute: NSLayoutAttribute.Bottom, multiplier: 1, constant: 0)
+        bottomConstraint.active = true
+
+        
         dismissViewControllerAnimated(true, completion: nil)
     }
     //連結照片庫圖片
