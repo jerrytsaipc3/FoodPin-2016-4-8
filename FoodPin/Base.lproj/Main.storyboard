@@ -402,17 +402,33 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="photoalbum" translatesAutoresizingMaskIntoConstraints="NO" id="g5T-Xk-qVx">
-                                                    <rect key="frame" x="180" y="61" width="240" height="128"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="600" height="255"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="240" id="OGD-3d-PlN"/>
                                                     </constraints>
+                                                    <variation key="default">
+                                                        <mask key="constraints">
+                                                            <exclude reference="OGD-3d-PlN"/>
+                                                        </mask>
+                                                    </variation>
                                                 </imageView>
                                             </subviews>
                                             <constraints>
+                                                <constraint firstItem="g5T-Xk-qVx" firstAttribute="top" secondItem="BWG-1w-o3B" secondAttribute="top" id="3xV-mL-iln"/>
+                                                <constraint firstItem="g5T-Xk-qVx" firstAttribute="leading" secondItem="BWG-1w-o3B" secondAttribute="leading" id="NcY-ih-o6i"/>
                                                 <constraint firstItem="g5T-Xk-qVx" firstAttribute="top" secondItem="BWG-1w-o3B" secondAttribute="topMargin" constant="53" id="PHL-qJ-pM8"/>
+                                                <constraint firstAttribute="trailing" secondItem="g5T-Xk-qVx" secondAttribute="trailing" id="arB-zY-ggc"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="g5T-Xk-qVx" secondAttribute="bottom" constant="-13.5" id="fE3-a6-Vth"/>
                                                 <constraint firstItem="g5T-Xk-qVx" firstAttribute="centerY" secondItem="BWG-1w-o3B" secondAttribute="centerY" id="nrr-vG-vHp"/>
                                                 <constraint firstItem="g5T-Xk-qVx" firstAttribute="centerX" secondItem="BWG-1w-o3B" secondAttribute="centerX" id="vzK-Ed-60e"/>
                                             </constraints>
+                                            <variation key="default">
+                                                <mask key="constraints">
+                                                    <exclude reference="PHL-qJ-pM8"/>
+                                                    <exclude reference="nrr-vG-vHp"/>
+                                                    <exclude reference="vzK-Ed-60e"/>
+                                                </mask>
+                                            </variation>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                     </tableViewCell>
@@ -420,7 +436,7 @@
                                         <rect key="frame" x="0.0" y="314" width="600" height="72"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="uO9-C3-9oH" id="83y-un-IGP">
-                                            <rect key="frame" x="0.0" y="0.0" width="600" height="72"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="71.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Restaurant Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="FBa-Ik-dZb">
@@ -462,7 +478,7 @@
                                         <rect key="frame" x="0.0" y="386" width="600" height="72"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="sYO-dW-kMt" id="YeR-cU-bgy">
-                                            <rect key="frame" x="0.0" y="0.0" width="600" height="72"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="71.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Restaurant Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="aqY-I4-cF3">
@@ -496,7 +512,7 @@
                                         <rect key="frame" x="0.0" y="458" width="600" height="72"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="6o7-U4-Vyc" id="ryA-Ga-Kbi">
-                                            <rect key="frame" x="0.0" y="0.0" width="600" height="72"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="71.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="LOCATION" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rsE-f6-Hus">
@@ -534,7 +550,7 @@
                                         <rect key="frame" x="0.0" y="530" width="600" height="72"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="RoH-zO-iA6" id="ws8-jH-i9b">
-                                            <rect key="frame" x="0.0" y="0.0" width="600" height="72"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="71.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Have You Ben Here " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ez1-Q3-ChA">
@@ -596,6 +612,9 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="imageView" destination="g5T-Xk-qVx" id="N6O-9D-mr8"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9Re-Lj-7vd" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="kLK-5A-68M" userLabel="Exit" sceneMemberID="exit"/>
