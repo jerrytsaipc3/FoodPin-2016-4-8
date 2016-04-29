@@ -12,8 +12,54 @@ class AddRestaurantController: UITableViewController, UIImagePickerControllerDel
     
     //連結照片庫圖片
     @IBOutlet var imageView:UIImageView!
+    @IBOutlet var nameTextField:UITextField!
+    @IBOutlet var typeTextField:UITextField!
+    @IBOutlet var locationTextField:UITextField!
+    @IBOutlet var yesButon:UIButton!
+    @IBOutlet var noButton:UIButton!
+    
+    var isVisited = true
 
+    //按save呼叫方法出現提醒
+    @IBAction func savebutton(sender: UIBarButtonItem) {
+        //定義
+          let name = nameTextField.text
+          let type = typeTextField.text
+          let location = locationTextField.text
+        
+        //寫程式碼做事
+        if name == "" || type == "" || location == "" {
+            let alertController = UIAlertController(title: "OOP", message: "We can`t proceed because one of the field is blank.Please note that all field are required.", preferredStyle: UIAlertControllerStyle.Alert)
+            alertController.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: nil))
+            self.presentViewController(alertController, animated: true, completion: nil)
+            return
 
+        }
+        // Print input data to console
+        print("Name: \(name)")
+        print("Type: \(type)")
+        print("Location: \(location)")
+        print("Have you been here: \(isVisited)")
+        
+        // Dismiss the view controller
+        dismissViewControllerAnimated(true, completion: nil)
+    }
+    
+    //YES, NO按鈕轉換顏色
+    @IBAction func toggleBeenHereButton(sender: UIButton){
+    //Yes 按鈕被點選
+        if sender == yesButon {
+          isVisited = true
+          yesButon.backgroundColor = UIColor(red: 235.0/255.0, green: 73.0/255.0, blue: 27.0/255.0, alpha: 1.0)
+          noButton.backgroundColor = UIColor.grayColor()
+        }else if sender == noButton {
+        isVisited = false
+        yesButon.backgroundColor = UIColor.grayColor()
+        noButton.backgroundColor = UIColor(red: 235.0/255.0, green: 73.0/255.0, blue: 27.0/255.0, alpha: 1.0)
+        }
+    }
+    
+    
     //偵測觸控與載入照片庫
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
     
