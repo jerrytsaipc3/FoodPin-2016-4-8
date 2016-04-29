@@ -80,7 +80,7 @@ func mapView(mapView: MKMapView, viewForAnnotation annotation: MKAnnotation) -> 
             }
             
             let leftIconView = UIImageView(frame: CGRectMake(0, 0, 53, 53))
-            leftIconView.image = UIImage(named: restaurant.image)
+            leftIconView.image = UIImage(data: restaurant.image!)
             annotationView?.leftCalloutAccessoryView = leftIconView
     
           //自訂大頭針顏色
