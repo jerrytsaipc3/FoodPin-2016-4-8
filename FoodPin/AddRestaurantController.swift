@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import CoreData
 
 class AddRestaurantController: UITableViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
@@ -19,6 +20,7 @@ class AddRestaurantController: UITableViewController, UIImagePickerControllerDel
     @IBOutlet var noButton:UIButton!
     
     var isVisited = true
+    var restaurant:Restaurant!
 
     //按save呼叫方法出現提醒
     @IBAction func savebutton(sender: UIBarButtonItem) {
@@ -32,14 +34,27 @@ class AddRestaurantController: UITableViewController, UIImagePickerControllerDel
             let alertController = UIAlertController(title: "OOP", message: "We can`t proceed because one of the field is blank.Please note that all field are required.", preferredStyle: UIAlertControllerStyle.Alert)
             alertController.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: nil))
             self.presentViewController(alertController, animated: true, completion: nil)
+            
             return
-
         }
-        // Print input data to console
-        print("Name: \(name)")
-        print("Type: \(type)")
-        print("Location: \(location)")
-        print("Have you been here: \(isVisited)")
+        if let managedObjectContext = (UIApplication.sharedApplication().delegate as?
+            AppDelegate)?.managedObjectContext {
+            restaurant =
+            NSEntityDescription.insertNewObjectForEntityForName("Restaurant", inManagedObjectContext: managedObjectContext) as! Restaurant
+                restaurant.name = name!
+                restaurant.type = type!
+                restaurant.location = location!
+            if let restaurantImage = imageView.image{
+            restaurant.image = UIImagePNGRepresentation(restaurantImage)
+            }
+            restaurant.isVisited = isVisited
+            do {
+              try managedObjectContext.save()
+            } catch {
+             print(error)
+             return
+            }
+        }
         
         // Dismiss the view controller
         dismissViewControllerAnimated(true, completion: nil)

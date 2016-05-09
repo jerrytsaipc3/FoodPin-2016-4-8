@@ -112,6 +112,16 @@ class RestaurantDetailViewController: UIViewController, UITableViewDataSource,
             if let rating = reviewViewController.rating {
                 restaurant.rating = rating
                 ratingButton.setImage(UIImage(named: rating), forState: UIControlState.Normal)
+                
+                //儲存評價至資料庫
+                if let managedObjectedContext = (UIApplication.sharedApplication().delegate as?
+                    AppDelegate)?.managedObjectContext {
+                    do {
+                    try managedObjectedContext.save()
+                    } catch {
+                      print(error)
+                    }
+                }
             }
         }
     }
