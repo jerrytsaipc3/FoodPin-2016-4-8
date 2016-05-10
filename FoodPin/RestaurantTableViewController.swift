@@ -76,6 +76,7 @@ class RestaurantTableViewController: UITableViewController, NSFetchedResultsCont
         cell.thumbnailImageView.image = UIImage(data: restaurants[indexPath.row].image!)
         cell.locationLabel.text = restaurants[indexPath.row].location
         cell.typeLabel.text = restaurants[indexPath.row].type
+        
         if let isVisited = restaurants[indexPath.row].isVisited?.boolValue {
             cell.accessoryType = isVisited ? .Checkmark : .None
         }

@@ -18,6 +18,7 @@ class AddRestaurantController: UITableViewController, UIImagePickerControllerDel
     @IBOutlet var locationTextField:UITextField!
     @IBOutlet var yesButon:UIButton!
     @IBOutlet var noButton:UIButton!
+    @IBOutlet var phoneTextField: UITextField!
     
     var isVisited = true
     var restaurant:Restaurant!
@@ -28,6 +29,8 @@ class AddRestaurantController: UITableViewController, UIImagePickerControllerDel
           let name = nameTextField.text
           let type = typeTextField.text
           let location = locationTextField.text
+          let phone = phoneTextField.text
+        
         
         //寫程式碼做事
         if name == "" || type == "" || location == "" {
@@ -44,6 +47,8 @@ class AddRestaurantController: UITableViewController, UIImagePickerControllerDel
                 restaurant.name = name!
                 restaurant.type = type!
                 restaurant.location = location!
+                restaurant.phone = phone!
+            
             if let restaurantImage = imageView.image{
             restaurant.image = UIImagePNGRepresentation(restaurantImage)
             }
