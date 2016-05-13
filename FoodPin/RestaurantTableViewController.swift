@@ -9,10 +9,31 @@
 import UIKit
 import CoreData
 
-class RestaurantTableViewController: UITableViewController, NSFetchedResultsControllerDelegate {
+class RestaurantTableViewController: UITableViewController, NSFetchedResultsControllerDelegate, UISearchResultsUpdating {
     
     var restaurants:[Restaurant] = []
     var fetchResultController:NSFetchedResultsController!
+    //增加搜尋欄
+    var searchController:UISearchController!
+    //宣告變數儲存搜尋結果
+    var searchResults:[Restaurant] = []
+    //過濾搜尋內容
+    func  filterContentForSearchText(searchText: String) {
+        searchResults = restaurants.filter({(restaurant:Restaurant) -> Bool in
+            let nameMatch = restaurant.name.rangeOfString(searchText, options: NSStringCompareOptions.CaseInsensitiveSearch)
+            return nameMatch != nil
+        })
+    }
+    //取得搜尋文字並傳遞給filter
+    func updateSearchResultsForSearchController(searchController: UISearchController) {
+        if let searchText = searchController.searchBar.text{
+        filterContentForSearchText(searchText)
+            tableView.reloadData()
+        }
+    }
+    
+    
+    
     
       override func viewDidLoad() {
         super.viewDidLoad()
@@ -48,6 +69,13 @@ class RestaurantTableViewController: UITableViewController, NSFetchedResultsCont
         tableView.estimatedRowHeight = 80.0
         tableView.rowHeight = UITableViewAutomaticDimension
         
+        //增加搜尋欄
+        searchController = UISearchController(searchResultsController:nil)
+        tableView.tableHeaderView = searchController.searchBar
+        
+        searchController.searchResultsUpdater = self
+        searchController.dimsBackgroundDuringPresentation = false
+        
 
     }
 
@@ -63,13 +91,24 @@ class RestaurantTableViewController: UITableViewController, NSFetchedResultsCont
     }
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return restaurants.count
+        
+        if searchController.active{
+            
+         return searchResults.count
+            
+        } else {
+            
+         return restaurants.count
+        }
     }
 
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         
         let cellIdentifier = "Cell"
         let cell = tableView.dequeueReusableCellWithIdentifier(cellIdentifier, forIndexPath: indexPath) as! RestaurantTableViewCell
+        
+        //回傳搜尋數量
+        let restaurant = (searchController.active) ? searchResults[indexPath.row] :restaurants[indexPath.row]
         
         // Configure the cell...
         cell.nameLabel.text = restaurants[indexPath.row].name
@@ -82,6 +121,15 @@ class RestaurantTableViewController: UITableViewController, NSFetchedResultsCont
         }
         
         return cell
+    }
+    
+    //使搜尋結果為不可編輯的
+    override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
+        if searchController.active {
+         return false
+        } else {
+         return true
+        }
     }
     
     // MARK: - Table view delegate
@@ -142,7 +190,8 @@ class RestaurantTableViewController: UITableViewController, NSFetchedResultsCont
         if segue.identifier == "showRestaurantDetail" {
             if let indexPath = tableView.indexPathForSelectedRow {
                 let destinationController = segue.destinationViewController as! RestaurantDetailViewController
-                destinationController.restaurant = restaurants[indexPath.row]
+                //傳遞被選取的餐廳到細節試圖控制器
+                destinationController.restaurant = (searchController.active) ? searchResults[indexPath.row] : restaurants[indexPath.row]
             }
         }
     }
